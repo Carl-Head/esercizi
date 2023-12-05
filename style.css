@@ -4,12 +4,9 @@
   box-sizing: border-box;
 }
 
-#bottone {
-  height: 50px;
-  width: 50px;
-  background-color: black;
-  border-radius: 50px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
