@@ -1,19 +1,25 @@
-var numero = 0;
-
-var bottone = document.getElementById("aumenta");
-
-bottone.addEventListener("click", function () {
-  numero++;
-  document.getElementById("numero").innerHTML = numero;
-});
-
-var bottone = document.getElementById("diminuisci");
-
-bottone.addEventListener("click", function () {
+function aggiungi() {
+  let prevcounter = parseInt(document.getElementById("numero").innerHTML);
+  let inputvalue = parseInt(document.getElementById("input").value);
+  let total = prevcounter + inputvalue;
   if (numero > 0) {
-    numero--;
-    document.getElementById("numero").innerHTML = numero;
-  } else {
-    alert("Impossibile ");
+    document.getElementById("numero").classList.remove("color-red");
   }
-});
+  document.getElementById("numero").innerText = total;
+  document.getElementById("input").value = "";
+}
+
+function sottrazione() {
+  let prevcounter = parseInt(document.getElementById("numero").innerHTML);
+  let inputvalue = parseInt(document.getElementById("input").value);
+  let total = prevcounter - inputvalue;
+  if (numero < 0) {
+    document.getElementById("numero").classList.add("color-red");
+  }
+  document.getElementById("numero").innerText = total;
+  document.getElementById("input").value = "";
+}
+
+document.getElementById("aumenta").addEventListener("click", aggiungi);
+
+document.getElementById("diminuisci").addEventListener("click", sottrazione);
