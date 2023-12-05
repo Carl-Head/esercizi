@@ -1,5 +1,19 @@
-function mostraMessaggio() {
-  console.log("Ciao");
-}
+var numero = 0;
 
-document.getElementById("bottone").addEventListener("click", mostraMessaggio);
+var bottone = document.getElementById("aumenta");
+
+bottone.addEventListener("click", function () {
+  numero++;
+  document.getElementById("numero").innerHTML = numero;
+});
+
+var bottone = document.getElementById("diminuisci");
+
+bottone.addEventListener("click", function () {
+  if (numero > 0) {
+    numero--;
+    document.getElementById("numero").innerHTML = numero;
+  } else {
+    alert("Impossibile ");
+  }
+});
